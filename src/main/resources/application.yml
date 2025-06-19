@@ -12,7 +12,7 @@ spring:
     username: root
 mybatis-plus:
   configuration:
-    map-underscore-to-camel-case: true
+    map-underscore-to-camel-case: false
     # 仅在开发环境开启日志
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   #    log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl

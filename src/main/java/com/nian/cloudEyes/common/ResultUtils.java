@@ -19,6 +19,15 @@ public class ResultUtils {
     }
 
     /**
+     * 成功
+     *
+     * @return 响应
+     */
+    public static BaseResponse<?> success() {
+        return new BaseResponse<>(0, null, "success");
+    }
+
+    /**
      * 失败
      *
      * @param errorCode 错误码
