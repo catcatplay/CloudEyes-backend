@@ -16,4 +16,13 @@ public enum UserRoleEnum {
         this.text = text;
         this.value = value;
     }
+
+    public static UserRoleEnum getEnumByValue(String userRole) {
+        for (UserRoleEnum value : UserRoleEnum.values()) {
+            if (value.value.equals(userRole)) {
+                return value;
+            }
+        }
+        return null;
+    }
 }

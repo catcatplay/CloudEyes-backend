@@ -79,7 +79,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
 
     @Override
     public Page<UserVo> pageList(UserDto userDto) {
-        Page<User> page = page(new Page<>(userDto.getCurrent(), userDto.getPageSize()));
+        LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<User>()
+                .like((StrUtil.isNotBlank(userDto.getUserAccount())), User::getUserAccount, userDto.getUserAccount())
+                .like((StrUtil.isNotBlank(userDto.getUserName())), User::getUserName, userDto.getUserName());
+        Page<User> page = page(new Page<>(userDto.getCurrent(), userDto.getPageSize()), queryWrapper);
         ArrayList<UserVo> userVos = new ArrayList<>();
         page.getRecords().forEach(item -> {
             UserVo vo = new UserVo();
