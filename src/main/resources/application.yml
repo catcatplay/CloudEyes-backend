@@ -10,6 +10,12 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/cloud_eyes
     username: root
+  # 文件上传配置
+  servlet:
+    multipart:
+      max-file-size: 10MB     # 单个文件最大限制
+      max-request-size: 100MB # 整个请求最大限制
+      enabled: true           # 启用文件上传支持
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: false
@@ -32,3 +38,9 @@ knife4j:
         api-rule: package
         api-rule-resources:
           - com.nian.cloudEyes.controller
+#minio配置
+minio:
+  access-key: admin
+  secret-key: minio12345
+  url: http://127.0.0.1:9005
+  bucket-name: cloud-eyes

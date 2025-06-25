@@ -54,7 +54,7 @@ public class UserController {
     @AuthCheck(role = UserRoleEnum.ADMIN)
     @ApiOperation(value = "分页查询账号信息")
     @PostMapping("/pageList")
-    public BaseResponse<Page<UserVo>> pageList(UserDto userDto) {
+    public BaseResponse<Page<UserVo>> pageList(@RequestBody UserDto userDto) {
         return ResultUtils.success(userService.pageList(userDto));
     }
 }

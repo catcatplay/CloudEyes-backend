@@ -31,5 +31,5 @@ public class PageRequest {
      * 排序顺序（默认升序）
      */
     @ApiModelProperty(value = "排序顺序（默认升序）")
-    private String sortOrder = "descend";
+    private String sortOrder = "desc";
 }
